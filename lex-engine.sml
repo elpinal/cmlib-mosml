@@ -3,7 +3,7 @@ functor MonoLexEngineFun (structure Streamable : MONO_STREAMABLE
                           val ord : Streamable.elem -> int)
    :> MONO_LEX_ENGINE
       where type Streamable.t = Streamable.t
-      where type Streamable.elem = Streamable.elem
+      and type Streamable.elem = Streamable.elem
    =
    struct
 

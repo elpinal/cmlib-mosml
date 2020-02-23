@@ -3,7 +3,7 @@ functor MonomorphizeStreamable (structure Streamable : STREAMABLE
                                 type elem)
    :> MONO_STREAMABLE
       where type t = elem Streamable.t
-      where type elem = elem
+      and type elem = elem
    =
    struct
 
@@ -23,7 +23,7 @@ functor MonomorphizeStreamable (structure Streamable : STREAMABLE
 structure SubstringMonoStreamable
    :> MONO_STREAMABLE
       where type t = Substring.substring
-      where type elem = char
+      and type elem = char
    =
    struct
 
@@ -43,7 +43,7 @@ structure SubstringMonoStreamable
 structure BytesubstringMonoStreamable
    :> MONO_STREAMABLE
       where type t = Bytesubstring.substring
-      where type elem = Word8.word
+      and type elem = Word8.word
    =
    struct
 
