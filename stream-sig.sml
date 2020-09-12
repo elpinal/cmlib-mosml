@@ -17,7 +17,6 @@ signature STREAM =
       val fromString : string -> char stream
       val fromBytestring : Bytestring.string -> Word8.word stream
       val fromTextInstream : TextIO.instream -> char stream
-      val fromBinInstream : BinIO.instream -> Word8.word stream
 
       val fix : ('a stream -> 'a stream) -> 'a stream
 

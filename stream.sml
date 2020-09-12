@@ -53,11 +53,6 @@ structure Stream
       fun fromTextInstream ins =
           fromProcess (fn () => TextIO.input1 ins)
 
-      fun fromBinInstream ins =
-          fromProcess (fn () => BinIO.input1 ins)
-
-
-
       fun fix f = f (lazy (fn () => front (fix f)))
 
       exception Empty

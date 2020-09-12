@@ -52,12 +52,7 @@ structure Bytesubstring :> BYTESUBSTRING =
          else
             V.mapi (fn (i, b1) => f (b1, V.sub (s2, i))) s1
 
-      fun rev s =
-         let
-            val len = size s
-         in
-            Word8Vector.tabulate (size s, (fn i => V.sub (s, len-i-1)))
-         end
+      fun rev s = Word8Vector.tabulate (size s, (fn i => V.sub (s, size s - i - 1)))
 
       fun eq (s1, s2) =
          let
